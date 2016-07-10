@@ -1,4 +1,3 @@
-
 <head>
 <script>
 var m=0;    // 答え
@@ -10,14 +9,20 @@ var reset=1; //スクリインをリセットするかどうか決める 真＝�
 var memori=0; //メモリー実装
 var tanp;    //単発ねた
 var sw=0;    //電源
+
+
 function sisoku(kari){if(sw==1){                 //enzを決めるのとnにスクリインの数を代入、また計算結果も出す
+
    equal();
    enz=kari;
    document.clc.screen.value = m;
    
    
    reset=1;
+
 }}
+
+
 function equal(){if(sw==1){
    n=parseInt(document.clc.screen.value);
    
@@ -30,8 +35,11 @@ function equal(){if(sw==1){
                case 4: break;
    }
    
+
 }}
+
 function kazu(suuji){if(sw==1){
+
                     if(reset==0){
                                 document.clc.screen.value = document.clc.screen.value + suuji;
                     }else      {
@@ -39,6 +47,7 @@ function kazu(suuji){if(sw==1){
                                 reset=0;
                     }
 }}
+
 function aclear(){if(sw==1){         　　　　　　　　　　   //AC
                   m=0;
                   n=0;
@@ -46,11 +55,14 @@ function aclear(){if(sw==1){         　　　　　　　　　　   //AC
                   reset=1;
                   enz=0;
 }}
+
 function cle(){if(sw==1){             　　　　　　　　　　　　　　　  //Cの機能
                  document.clc.screen.value = 0;
                  reset=1;
                  
 }}
+
+
 function memo(kari2){if(sw==1){　　　　　　　　　　　　　　　　　　　//メモリ全般
     equal();
     switch(kari2){
@@ -65,7 +77,9 @@ function memo(kari2){if(sw==1){　　　　　　　　　　　　　　　　�
     n=0;
     reset=1;
     document.clc.screen2.value=memori;
+
 }}
+
 function tanpatu(tanp){if(sw==1){
      switch (tanp){
      
@@ -90,17 +104,14 @@ function tanpatu(tanp){if(sw==1){
                            
      }
 }}
+
+
 function killswitch(){
          if(sw==0){
-                   document.clc.screen.value="--------------------------------";
-                   document.clc.screen2.value="・・・please,wait";
                    document.clc.screen.value="0";
                    document.clc.screen2.value="memory";
                    sw=1;
-         }else{    
-                    document.clc.screen.value="--------------------------------";
-                   document.clc.screen2.value="・・・please,wait";
-                   
+         }else{
                    aclear();
                    memo(4);
                    sw=0;
@@ -161,5 +172,3 @@ function killswitch(){
 
 
 </body>
-Status API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
