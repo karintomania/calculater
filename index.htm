@@ -1,0 +1,180 @@
+<head>
+<script>
+var m=0;    // 答え
+var n=0　　//足される数や引かれる数
+var kari,kari2;  //仮の数値、enzに代入するkari、memoで同じことをするkari2
+var enz=0;  //実際にequal関数の時使う
+var suuji; //スクリインに映す奴
+var reset=1; //スクリインをリセットするかどうか決める 真＝１
+var memori=0; //メモリー実装
+var tanp;    //単発ねた
+var sw=0;    //電源
+
+
+function sisoku(kari){if(sw==1){                 //enzを決めるのとnにスクリインの数を代入、また計算結果も出す
+
+   equal();
+   enz=kari;
+   document.clc.screen.value = m;
+   
+   
+   reset=1;
+
+}}
+
+
+function equal(){if(sw==1){
+   n=parseInt(document.clc.screen.value);
+   
+   
+   switch(enz){ 
+               case 0: m=m+n;break;
+               case 1: m=m-n;break;
+               case 2: m=m*n;break;
+               case 3: m=m/n;break;
+               case 4: break;
+   }
+   
+
+}}
+
+function kazu(suuji){if(sw==1){
+
+                    if(reset==0){
+                                document.clc.screen.value = document.clc.screen.value + suuji;
+                    }else      {
+                                document.clc.screen.value = suuji;
+                                reset=0;
+                    }
+}}
+
+function aclear(){if(sw==1){         　　　　　　　　　　   //AC
+                  m=0;
+                  n=0;
+                  document.clc.screen.value = 0;
+                  reset=1;
+                  enz=0;
+}}
+
+function cle(){if(sw==1){             　　　　　　　　　　　　　　　  //Cの機能
+                 document.clc.screen.value = 0;
+                 reset=1;
+                 
+}}
+
+
+function memo(kari2){if(sw==1){　　　　　　　　　　　　　　　　　　　//メモリ全般
+    equal();
+    switch(kari2){
+           case 1:memori=memori+m;document.clc.screen.value=m;break;
+           case 2:memori=memori-m;document.clc.screen.value=m;break;
+           case 3:document.clc.screen.value=memori;break;
+           case 4:memori=0;break;
+    }
+    
+    enz=0;
+    m=0;
+    n=0;
+    reset=1;
+    document.clc.screen2.value=memori;
+
+}}
+
+function tanpatu(tanp){if(sw==1){
+     switch (tanp){
+     
+                  case 0:
+                          if(reset==0){
+                                      document.clc.screen.value = parseInt(document.clc.screen.value)*10;
+                          }else{      
+                                      document.clc.screen.value =0;
+                          }break;
+                          
+                  
+                  case 1:
+                          if(reset==0){
+                                      document.clc.screen.value = parseInt(document.clc.screen.value)*100;
+                          }else{      
+                                      document.clc.screen.value =0;
+                          }break;
+                  
+                  case 2:document.clc.screen.value = parseInt(document.clc.screen.value)*(1-2);break;
+                  
+                  case 3:  document.clc.screen.value = Math.floor(parseInt(document.clc.screen.value)/10);break;
+                           
+     }
+}}
+
+
+function killswitch(){
+         if(sw==0){
+                   document.clc.screen.value="--------------------------------";
+                   document.clc.screen2.value="・・・please,wait";
+                   document.clc.screen.value="0";
+                   document.clc.screen2.value="memory";
+                   sw=1;
+         }else{    
+                    document.clc.screen.value="--------------------------------";
+                   document.clc.screen2.value="・・・please,wait";
+
+                   
+                   aclear();
+                   memo(4);
+                   sw=0;
+                   document.clc.screen.value=null;
+                   document.clc.screen2.value=null;
+                   
+         }
+}
+</script>
+</head>
+
+
+
+<body bgcolor="gray">
+<br>
+<form name="clc">
+<textarea name="screen"rows="1"style="font-size:50px;text-align : right; width:500px"></textarea><br>
+
+<input type="button"value="AC"onclick="aclear()" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="C" onclick="cle()"    style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="→" onclick="tanpatu(3)"    style="font-size:25px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="CM"onclick="memo(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="on/off"onclick="killswitch()">
+<textarea name="screen2"rows="1"style="font-size:20px;text-align : right;"></textarea>
+<br>
+
+<input type="button"value="7"onclick="kazu(7)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">      
+<input type="button"value="8"onclick="kazu(8)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">  
+<input type="button"value="9"onclick="kazu(9)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="÷"onclick="sisoku(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="RM"onclick="memo(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px"><br>
+
+<input type="button"value="4"onclick="kazu(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="5"onclick="kazu(5)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="6"onclick="kazu(6)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="×"onclick="sisoku(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="M-"onclick="memo(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px"><br>
+
+<input type="button"value="1"onclick="kazu(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="2"onclick="kazu(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="3"onclick="kazu(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="-"onclick="sisoku(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="M+"onclick="memo(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px"><br>
+
+<input type="button"value="0"onclick="tanpatu(0)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="00"onclick="tanpatu(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="±"onclick="tanpatu(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="+"onclick="sisoku(0)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="="onclick="sisoku(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+
+<br>
+
+
+
+</form>
+
+
+
+
+</body>
