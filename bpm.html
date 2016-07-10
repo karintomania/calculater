@@ -1,0 +1,68 @@
+<head>
+<title>BPMcounter</title>
+
+<script>
+var beat=0;
+var sec=0;
+var timer1;
+
+
+function count(){
+	
+	var c = document.getElementById("BPM");
+	
+	if(sec < 20){
+	beat++;
+	
+	c.innerHTML = beat;
+	
+	if(beat==1) timer1 = setInterval("hyouji()",1000);
+	
+	
+	}else{
+		c.innerHTML = "BPM = " + beat * 3;
+		
+	}
+ 
+}
+
+
+
+function hyouji(){
+	document.getElementById("time").innerHTML = ++sec;
+	if(sec == 20) clearInterval(timer1);
+	
+}
+
+function reset(){
+	beat = 0;
+	sec = 0;
+	clearInterval(timer1);
+	
+	document.getElementById("time").innerHTML = 0;
+	document.getElementById("BPM").innerHTML = 0;
+
+}
+
+
+
+</script>
+</head>
+
+
+
+<body>
+count:
+<div id="BPM"style="font-size:150%;position:relative;left:80px;">0</div>
+
+time:
+<div id="time"style="font-size:150%;position:relative;left:80px;">0</div>
+
+
+<button onclick="count()"style="position:relative;left:50px;top:50px;font-size:150%;width:100px;height:80px">count</button>
+
+<button onclick="reset()"style="position:relative;left:80px;top:50px;font-size:150%;width:100px;height:80px">reset</button>
+
+
+
+</body>
