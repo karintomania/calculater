@@ -1,17 +1,17 @@
 <head>
 <script>
-var m=0;    // “š‚¦
-var n=0@@//‘«‚³‚ê‚é”‚âˆø‚©‚ê‚é”
-var kari,kari2;  //‰¼‚Ì”’lAenz‚É‘ã“ü‚·‚ékariAmemo‚Å“¯‚¶‚±‚Æ‚ğ‚·‚ékari2
-var enz=0;  //ÀÛ‚ÉequalŠÖ”‚Ìg‚¤
-var suuji; //ƒXƒNƒŠƒCƒ“‚É‰f‚·“z
-var reset=1; //ƒXƒNƒŠƒCƒ“‚ğƒŠƒZƒbƒg‚·‚é‚©‚Ç‚¤‚©Œˆ‚ß‚é ^‚P
-var memori=0; //ƒƒ‚ƒŠ[À‘•
-var tanp;    //’P”­‚Ë‚½
-var sw=0;    //“dŒ¹
+var m=0;    // ç­”ãˆ
+var n=0ã€€ã€€//è¶³ã•ã‚Œã‚‹æ•°ã‚„å¼•ã‹ã‚Œã‚‹æ•°
+var kari,kari2;  //ä»®ã®æ•°å€¤ã€enzã«ä»£å…¥ã™ã‚‹kariã€memoã§åŒã˜ã“ã¨ã‚’ã™ã‚‹kari2
+var enz=0;  //å®Ÿéš›ã«equalé–¢æ•°ã®æ™‚ä½¿ã†
+var suuji; //ã‚¹ã‚¯ãƒªã‚¤ãƒ³ã«æ˜ ã™å¥´
+var reset=1; //ã‚¹ã‚¯ãƒªã‚¤ãƒ³ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹ã‹ã©ã†ã‹æ±ºã‚ã‚‹ çœŸï¼ï¼‘
+var memori=0; //ãƒ¡ãƒ¢ãƒªãƒ¼å®Ÿè£…
+var tanp;    //å˜ç™ºã­ãŸ
+var sw=0;    //é›»æº
 
 
-function sisoku(kari){if(sw==1){                 //enz‚ğŒˆ‚ß‚é‚Ì‚Æn‚ÉƒXƒNƒŠƒCƒ“‚Ì”‚ğ‘ã“üA‚Ü‚½ŒvZŒ‹‰Ê‚ào‚·
+function sisoku(kari){if(sw==1){                 //enzã‚’æ±ºã‚ã‚‹ã®ã¨nã«ã‚¹ã‚¯ãƒªã‚¤ãƒ³ã®æ•°ã‚’ä»£å…¥ã€ã¾ãŸè¨ˆç®—çµæœã‚‚å‡ºã™
 
    equal();
    enz=kari;
@@ -48,7 +48,7 @@ function kazu(suuji){if(sw==1){
                     }
 }}
 
-function aclear(){if(sw==1){         @@@@@@@@@@   //AC
+function aclear(){if(sw==1){         ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€   //AC
                   m=0;
                   n=0;
                   document.clc.screen.value = 0;
@@ -56,14 +56,14 @@ function aclear(){if(sw==1){         @@@@@@@@@@   //AC
                   enz=0;
 }}
 
-function cle(){if(sw==1){             @@@@@@@@@@@@@@@  //C‚Ì‹@”\
+function cle(){if(sw==1){             ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  //Cã®æ©Ÿèƒ½
                  document.clc.screen.value = 0;
                  reset=1;
                  
 }}
 
 
-function memo(kari2){if(sw==1){@@@@@@@@@@@@@@@@@@@//ƒƒ‚ƒŠ‘S”Ê
+function memo(kari2){if(sw==1){ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€//ãƒ¡ãƒ¢ãƒªå…¨èˆ¬
     equal();
     switch(kari2){
            case 1:memori=memori+m;document.clc.screen.value=m;break;
@@ -109,13 +109,13 @@ function tanpatu(tanp){if(sw==1){
 function killswitch(){
          if(sw==0){
                    document.clc.screen.value="--------------------------------";
-                   document.clc.screen2.value="EEEplease,wait";
+                   document.clc.screen2.value="ãƒ»ãƒ»ãƒ»please,wait";
                    document.clc.screen.value="0";
                    document.clc.screen2.value="memory";
                    sw=1;
          }else{    
                     document.clc.screen.value="--------------------------------";
-                   document.clc.screen2.value="EEEplease,wait";
+                   document.clc.screen2.value="ãƒ»ãƒ»ãƒ»please,wait";
 
                    
                    aclear();
@@ -138,7 +138,7 @@ function killswitch(){
 
 <input type="button"value="AC"onclick="aclear()" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="C" onclick="cle()"    style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
-<input type="button"value="¨" onclick="tanpatu(3)"    style="font-size:25px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="â†’" onclick="tanpatu(3)"    style="font-size:25px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="CM"onclick="memo(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="on/off"onclick="killswitch()">
 <textarea name="screen2"rows="1"style="font-size:20px;text-align : right;"></textarea>
@@ -147,13 +147,13 @@ function killswitch(){
 <input type="button"value="7"onclick="kazu(7)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">      
 <input type="button"value="8"onclick="kazu(8)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">  
 <input type="button"value="9"onclick="kazu(9)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
-<input type="button"value="€"onclick="sisoku(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="Ã·"onclick="sisoku(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="RM"onclick="memo(3)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px"><br>
 
 <input type="button"value="4"onclick="kazu(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="5"onclick="kazu(5)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="6"onclick="kazu(6)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
-<input type="button"value="~"onclick="sisoku(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="Ã—"onclick="sisoku(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="M-"onclick="memo(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px"><br>
 
 <input type="button"value="1"onclick="kazu(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
@@ -164,7 +164,7 @@ function killswitch(){
 
 <input type="button"value="0"onclick="tanpatu(0)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="00"onclick="tanpatu(1)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
-<input type="button"value="}"onclick="tanpatu(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
+<input type="button"value="Â±"onclick="tanpatu(2)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="+"onclick="sisoku(0)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 <input type="button"value="="onclick="sisoku(4)" style="font-size:20px;WIDTH: 50px; HEIGHT: 50px">
 
