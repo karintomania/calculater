@@ -11,19 +11,30 @@ var cnt=0; //打った四字熟語の数
 
 function cmprsn(){
 if(window.event.keyCode==13){
+
+
 if(f.qst.value == f.ans.value){
 
 	rnd = Math.floor( Math.random() * 184 ) ;
 	f.qst.value = array[rnd];
 	f.ans.value = "";
+
+	if(sec==0){
+		count1 = setInterval("hyoji()",1000);
+	}
+
 	check();
+
 }
 
 }
 }
 
+//打った四字熟語が五個になってたら結果発表
 function check(){
 	cnt++;
+
+
 	if(cnt == 5){
 		alert("あなたは5個の四字熟語を打つのに"+f.time.value+"秒かかりました。");
 		sec = 0;
@@ -35,29 +46,17 @@ function check(){
 }
 
 
+//秒数カウント関連
 var sec=0;
 function hyoji()
 {
 	f.time.value = sec++;
 }
 
-
-function startfnc()
-{
-
-	rnd = Math.floor( Math.random() * 184 ) ;
-	f.qst.value = array[rnd];
-
-	//関数hyoji()を1000ミリ秒間隔で呼び出す
-	if(sec==0){
-	count1 = setInterval("hyoji()",1000);
-	}
-}
 </script>
 
 <form id="f">
 <p><input type="txt"name="qst"value=""></p>
 <p><input type="txt"name="ans"value=""onkeydown="cmprsn()"></p>
-<p><input type="button" value="スタート" onclick="startfnc()"></p>
 <p><input type="txt"name="time"value="0"></p>
 </form>
