@@ -30,6 +30,7 @@ function check(){
 		f.time.value = sec;
 		f.qst.value = "";
 		cnt=0;
+		clearInterval(count1);
 }
 }
 
@@ -48,7 +49,9 @@ function startfnc()
 	f.qst.value = array[rnd];
 
 	//関数hyoji()を1000ミリ秒間隔で呼び出す
-	if(sec==0)setInterval("hyoji()",1000);
+	if(sec==0){
+	count1 = setInterval("hyoji()",1000);
+	}
 }
 </script>
 
